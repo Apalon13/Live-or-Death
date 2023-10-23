@@ -2,54 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slime : MonoBehaviour, IDamageable
+public class Slime : MonoBehaviour
 {
-    Animator animator;
+    public float damage = 1f;
 
-    Rigidbody2D rb;
+    public float knocbackF = 20f;
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Collider2D collider = col.collider;
+        IDamageable damageable = collider.GetComponent<IDamageable>();
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-    }
-    public float Health
-    {
-        set
+        if (damageable != null)
         {
-            if (value < _health)
+            if (damageable != null)
             {
-                animator.SetTrigger("Hit");
-            }
+                Vector2 dir = (collider.gameObject.transform.position - transform.position).normalized;
+                Vector2 knockback = dir * knocbackF;
+                print(knockback);
 
-            _health = value;
-
-            if ( _health <= 0 ) 
-            {
-                animator.SetBool("Defeated", true);
+                damageable.OnHit(damage, knockback);
             }
         }
-        get 
-        {
-            return _health; 
-        }
     }
 
-    public float _health = 3;
-
-    void RemoveEnemy()
-    {
-        Destroy(gameObject);
-    }
-
-    public void OnHit(float damage)
-    {
-        Health -= damage;
-    }
-
-    public void OnHit(float damage, Vector2 knockback)
-    {
-        Health -= damage;
-        rb.AddForce(knockback, ForceMode2D.Impulse);
-    }
 }

@@ -21,7 +21,7 @@ public class PlayerControler : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     Animator animator;
 
@@ -40,7 +40,15 @@ public class PlayerControler : MonoBehaviour
     {
         if (canMove == true && movemenInput != Vector2.zero)
         {
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movemenInput * moveSpeed * Time.deltaTime), maxSpeed);
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movemenInput * moveSpeed * Time.deltaTime), maxSpeed);
+            rb.AddForce(movemenInput * moveSpeed * Time.deltaTime);
+
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                float limited = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                rb.velocity = rb.velocity.normalized * limited; 
+            }
+
             animator.SetBool("IsMoving", true);
 
             if (movemenInput.x < 0)
