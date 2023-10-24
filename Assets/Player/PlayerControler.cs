@@ -40,8 +40,8 @@ public class PlayerControler : MonoBehaviour
     {
         if (canMove == true && movemenInput != Vector2.zero)
         {
-            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movemenInput * moveSpeed * Time.deltaTime), maxSpeed);
-            rb.AddForce(movemenInput * moveSpeed * Time.deltaTime);
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movemenInput * moveSpeed * Time.deltaTime), maxSpeed);
+            //rb.AddForce(movemenInput * moveSpeed * Time.deltaTime);
 
             if (rb.velocity.magnitude > maxSpeed)
             {

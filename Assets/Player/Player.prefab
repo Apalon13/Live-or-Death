@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 376092757
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 171448137, guid: 9849af1ddd2186545a837b6309c91150, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &5845631631484010930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18806df65a47fba42ba9109fb5879eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 600
+  moveSpeed: 30
   maxSpeed: 8
   swordHitbox: {fileID: 7937335611185967529}
   idleFriction: 0.9
@@ -151,7 +151,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.75
+  m_LinearDrag: 20
   m_AngularDrag: 0.4
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -243,8 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994dcee010121244f9c000a51fb5b2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 6692952569455952606, guid: dc56b05f6d987634e92b80d531006a31, type: 3}
   disableSimulation: 1
-  _health: 30
+  _health: 3
   _targetable: 1
 --- !u!1 &7937335611185967529
 GameObject:
@@ -273,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 7937335611185967529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3586, y: 0.2901, z: 0}
+  m_LocalPosition: {x: 0.082, y: -0.0501, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -311,7 +312,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27362984, y: -0.3400969}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -338,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordDamage: 1
   swordCollider: {fileID: 3891863046471203392}
-  knocbackF: 20
+  knocbackF: 5
   player: {fileID: 4946414947893099287}
-  faceRight: {x: -0.3586, y: 0.2901, z: 0}
-  faceLeft: {x: -0.1813, y: 0.2901, z: 0}
+  faceRight: {x: -0.0854, y: -0.0511, z: 0}
+  faceLeft: {x: 0.082, y: -0.0501, z: 0}

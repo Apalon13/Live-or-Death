@@ -61,7 +61,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     public float _health = 3;
 
-    public bool _targetable = true;
+    bool _targetable = true;
 
     void RemoveEnemy()
     {

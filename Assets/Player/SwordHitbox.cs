@@ -26,18 +26,21 @@ public class SwordHitbox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        IDamageable damagableObject = collider.GetComponent<IDamageable>();
+        IDamageable damageable = collider.GetComponent<IDamageable>();
 
-        if (damagableObject != null)
+        if (damageable != null)
         {
-            Vector2 dir = (collider.gameObject.transform.position - player.transform.position).normalized;
-            Vector2 knockback = dir * knocbackF;
+            if (damageable != null)
+            {
+                Vector2 dir = (collider.gameObject.transform.position - transform.position).normalized;
+                Vector2 knockback = dir * knocbackF;
 
-            damagableObject.OnHit(swordDamage, knockback);
-        }
-        else
-        {
-            Debug.LogWarning("Error knockback");
+                damageable.OnHit(swordDamage, knockback);
+            }
+            else
+            {
+                Debug.LogWarning("Error k");
+            }
         }
     }
 
