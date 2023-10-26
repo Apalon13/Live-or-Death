@@ -6,6 +6,12 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 {
     public bool disableSimulation = false;
 
+    public float invincibilitiTime = 0.25f;
+
+    public bool isinvincibilitiEnable = false;
+
+    private float invincibleTimeElapsed = 0f;
+
     Animator animator;
 
     Rigidbody2D rb;
@@ -59,9 +65,29 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     }
 
+    public bool Invincible
+    {
+        get
+        {
+            return _invincible;
+        }
+        set
+        {
+            _invincible = value;
+
+            if(Invincible == true)
+            {
+                invincibleTimeElapsed = 0f;
+            }
+            Debug.Log(Invincible);
+        }
+
+    }
     public float _health = 3;
 
     bool _targetable = true;
+
+    bool _invincible = false;
 
     void RemoveEnemy()
     {
@@ -70,17 +96,45 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     public void OnHit(float damage)
     {
-        Health -= damage;
+        if (!isinvincibilitiEnable || !Invincible)
+        {
+            Health -= damage;
+        }
+
+        if (isinvincibilitiEnable)
+        {
+            Invincible = true;
+        }
     }
 
     public void OnHit(float damage, Vector2 knockback)
     {
-        Health -= damage;
-        rb.AddForce(knockback, ForceMode2D.Impulse);
+        if(!isinvincibilitiEnable! || !Invincible)
+        {
+            Health -= damage;
+            rb.AddForce(knockback, ForceMode2D.Impulse);
+        }
+
+        if(isinvincibilitiEnable)
+        {
+            Invincible = true;
+        }
     }
     public void OnObjectDestroy()
     {
         GameObject.Destroy(gameObject);
     }
 
+    public void FixedUpdate()
+    {
+        if (Invincible)
+        {
+            invincibleTimeElapsed += Time.deltaTime;
+
+            if(invincibleTimeElapsed > invincibilitiTime)
+            {
+                Invincible = false;
+            }
+        }
+    }
 }

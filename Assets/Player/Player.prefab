@@ -243,10 +243,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994dcee010121244f9c000a51fb5b2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 6692952569455952606, guid: dc56b05f6d987634e92b80d531006a31, type: 3}
   disableSimulation: 1
+  invincibilitiTime: 0.5
+  isinvincibilitiEnable: 1
   _health: 3
-  _targetable: 1
 --- !u!1 &7937335611185967529
 GameObject:
   m_ObjectHideFlags: 0
