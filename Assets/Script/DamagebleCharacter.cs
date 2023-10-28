@@ -86,7 +86,6 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             {
                 invincibleTimeElapsed = 0f;
             }
-            Debug.Log(Invincible);
         }
     }
 
@@ -108,7 +107,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             Health -= damage;
         }
 
-        if (isinvincibilitiEnable)
+        if (isinvincibilitiEnable && !Invincible)
         {
             Invincible = true;
         }
@@ -122,7 +121,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             rb.AddForce(knockback, ForceMode2D.Impulse);
         }
 
-        if(isinvincibilitiEnable)
+        if(isinvincibilitiEnable && !Invincible)
         {
             Invincible = true;
         }

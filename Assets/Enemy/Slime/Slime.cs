@@ -51,7 +51,7 @@ public class Slime : MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
     }
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionStay2D(Collision2D col)
     {
         Collider2D collider = col.collider;
         IDamageable damageable = collider.GetComponent<IDamageable>();
