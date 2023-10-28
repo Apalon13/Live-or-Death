@@ -381,6 +381,26 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1673564235291209675, guid: 1924cc432b6d23245b99b8811a85835c, type: 3}
+      propertyPath: _health
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673564235291209675, guid: 1924cc432b6d23245b99b8811a85835c, type: 3}
+      propertyPath: _defaultColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673564235291209675, guid: 1924cc432b6d23245b99b8811a85835c, type: 3}
+      propertyPath: _defaultColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673564235291209675, guid: 1924cc432b6d23245b99b8811a85835c, type: 3}
+      propertyPath: _defaultColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673564235291209675, guid: 1924cc432b6d23245b99b8811a85835c, type: 3}
+      propertyPath: _defaultColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4946414947893099287, guid: 1924cc432b6d23245b99b8811a85835c, type: 3}
       propertyPath: m_Name
       value: Player

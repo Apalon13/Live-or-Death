@@ -66,8 +66,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             {
                 rb.simulated = false;
             }
-            
-
+           
             physicsCollider.enabled = value;
         }
 
@@ -89,8 +88,8 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             }
             Debug.Log(Invincible);
         }
-
     }
+
     public float _health = 3;
 
     bool _targetable = true;
@@ -117,7 +116,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     public void OnHit(float damage, Vector2 knockback)
     {
-        if(!isinvincibilitiEnable! || !Invincible)
+        if(!isinvincibilitiEnable || !Invincible)
         {
             Health -= damage;
             rb.AddForce(knockback, ForceMode2D.Impulse);
@@ -133,20 +132,20 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         GameObject.Destroy(gameObject);
     }
 
-    public void FixedUpdate()
+    void Update()
     {
         if (Invincible)
         {
             invincibleTimeElapsed += Time.deltaTime;
 
-            if(invincibleTimeElapsed > invincibilitiTime)
+            if (invincibleTimeElapsed > invincibilitiTime)  
             {
                 Invincible = false;
-                _spriteRend.color = Color.Lerp(_defaultColor, DamageColor, invincibilitiTime * invincibleTimeElapsed);
+                _spriteRend.color = Color.Lerp(_defaultColor, DamageColor, Time.deltaTime);
             }
             else
             {
-                _spriteRend.color = Color.Lerp(DamageColor, _defaultColor, invincibilitiTime * invincibleTimeElapsed);
+                _spriteRend.color = Color.Lerp(DamageColor, _defaultColor, Time.deltaTime);
             }
         }
     }

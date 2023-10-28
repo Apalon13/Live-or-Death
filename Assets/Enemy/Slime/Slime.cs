@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Slime : MonoBehaviour
@@ -14,12 +15,15 @@ public class Slime : MonoBehaviour
 
     Rigidbody2D rb;
 
+    Animator animator;
+
     SpriteRenderer spriteRenderer;
 
     DamagebleCharacter damagebleCharacter;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         damagebleCharacter = GetComponent<DamagebleCharacter>();
@@ -28,6 +32,7 @@ public class Slime : MonoBehaviour
     {
         if (damagebleCharacter.Targetable && detectionZone.detectedObjs.Count > 0)
         {
+            animator.SetBool("IsMoving", true);
             Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
 
             if (direction.x < 0)
@@ -41,6 +46,10 @@ public class Slime : MonoBehaviour
 
             rb.AddForce(direction * moveSpeed * Time.deltaTime);
         }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
     }
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -49,17 +58,14 @@ public class Slime : MonoBehaviour
 
         if (damageable != null)
         {
-            if (damageable != null)
-            {
-                Vector2 dir = (collider.gameObject.transform.position - transform.position).normalized;
-                Vector2 knockback = dir * knocbackF;
+            Vector2 dir = (collider.gameObject.transform.position - transform.position).normalized;
+            Vector2 knockback = dir * knocbackF;
 
-                damageable.OnHit(damage, knockback);
-            }
-            else
-            {
-                Debug.LogWarning("Error k");
-            }
+            damageable.OnHit(damage, knockback);
+        }
+        else
+        {
+            Debug.LogWarning("Error k");
         }
     }
 
