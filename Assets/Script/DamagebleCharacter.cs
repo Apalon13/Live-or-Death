@@ -12,17 +12,25 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     private float invincibleTimeElapsed = 0f;
 
+    public Color DamageColor = Color.red;
+
+    Color _defaultColor;
+
     Animator animator;
 
     Rigidbody2D rb;
+
+    SpriteRenderer _spriteRend;
 
     Collider2D physicsCollider;
 
     private void Start()
     {
+        _spriteRend = GetComponent<SpriteRenderer>();
         physicsCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        _defaultColor = _spriteRend.color;
     }
     public float Health
     {
@@ -134,6 +142,11 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             if(invincibleTimeElapsed > invincibilitiTime)
             {
                 Invincible = false;
+                _spriteRend.color = Color.Lerp(_defaultColor, DamageColor, invincibilitiTime * invincibleTimeElapsed);
+            }
+            else
+            {
+                _spriteRend.color = Color.Lerp(DamageColor, _defaultColor, invincibilitiTime * invincibleTimeElapsed);
             }
         }
     }
