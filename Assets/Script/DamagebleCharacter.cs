@@ -136,7 +136,6 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         if (Invincible)
         {
             invincibleTimeElapsed += Time.deltaTime;
-
             if (invincibleTimeElapsed > invincibilitiTime)  
             {
                 Invincible = false;
