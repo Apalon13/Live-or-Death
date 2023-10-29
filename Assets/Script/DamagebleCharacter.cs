@@ -12,17 +12,25 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     private float invincibleTimeElapsed = 0f;
 
+    public Color DamageColor = Color.red;
+
+    Color _defaultColor;
+
     Animator animator;
 
     Rigidbody2D rb;
+
+    SpriteRenderer _spriteRend;
 
     Collider2D physicsCollider;
 
     private void Start()
     {
+        _spriteRend = GetComponent<SpriteRenderer>();
         physicsCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        _defaultColor = _spriteRend.color;
     }
     public float Health
     {
@@ -58,8 +66,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             {
                 rb.simulated = false;
             }
-            
-
+           
             physicsCollider.enabled = value;
         }
 
@@ -79,10 +86,9 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             {
                 invincibleTimeElapsed = 0f;
             }
-            Debug.Log(Invincible);
         }
-
     }
+
     public float _health = 3;
 
     bool _targetable = true;
@@ -101,7 +107,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             Health -= damage;
         }
 
-        if (isinvincibilitiEnable)
+        if (isinvincibilitiEnable && !Invincible)
         {
             Invincible = true;
         }
@@ -109,14 +115,14 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     public void OnHit(float damage, Vector2 knockback)
     {
-        if(!isinvincibilitiEnable! || !Invincible)
+        if(!isinvincibilitiEnable || !Invincible)
         {
             AudioManager.instance.Play("Damage");
             Health -= damage;
             rb.AddForce(knockback, ForceMode2D.Impulse);
         }
 
-        if(isinvincibilitiEnable)
+        if(isinvincibilitiEnable && !Invincible)
         {
             Invincible = true;
         }
@@ -126,15 +132,19 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         GameObject.Destroy(gameObject);
     }
 
-    public void FixedUpdate()
+    void Update()
     {
         if (Invincible)
         {
             invincibleTimeElapsed += Time.deltaTime;
-
-            if(invincibleTimeElapsed > invincibilitiTime)
+            if (invincibleTimeElapsed > invincibilitiTime)  
             {
                 Invincible = false;
+                _spriteRend.color = Color.Lerp(_defaultColor, DamageColor, Time.deltaTime);
+            }
+            else
+            {
+                _spriteRend.color = Color.Lerp(DamageColor, _defaultColor, Time.deltaTime);
             }
         }
     }

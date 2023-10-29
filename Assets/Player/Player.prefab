@@ -246,7 +246,8 @@ MonoBehaviour:
   disableSimulation: 1
   invincibilitiTime: 0.5
   isinvincibilitiEnable: 1
-  _health: 3
+  DamageColor: {r: 1, g: 0, b: 0, a: 1}
+  _health: 30
 --- !u!1 &7937335611185967529
 GameObject:
   m_ObjectHideFlags: 0
