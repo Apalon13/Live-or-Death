@@ -117,6 +117,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
     {
         if(!isinvincibilitiEnable || !Invincible)
         {
+            AudioManager.instance.Play("Damage");
             Health -= damage;
             rb.AddForce(knockback, ForceMode2D.Impulse);
         }
