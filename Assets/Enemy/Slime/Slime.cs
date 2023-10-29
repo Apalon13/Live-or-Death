@@ -13,6 +13,14 @@ public class Slime : MonoBehaviour
 
     public DetectionZone detectionZone;
 
+    private float waitTime;
+
+    public float startTimeWait;
+
+    public Transform[] moveSpot;
+
+    private int randomSpot;
+
     Rigidbody2D rb;
 
     Animator animator;
@@ -23,13 +31,45 @@ public class Slime : MonoBehaviour
 
     void Start()
     {
+        waitTime = startTimeWait;
+        randomSpot = Random.Range(0, moveSpot.Length);
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         damagebleCharacter = GetComponent<DamagebleCharacter>();
     }
-    void FixedUpdate()
+    void Update()
     {
+        if (damagebleCharacter.Targetable && detectionZone.detectedObjs.Count == 0)
+        {
+            animator.SetBool("IsMoving", true);
+            transform.position = Vector2.MoveTowards(transform.position, moveSpot[randomSpot].position, 0.6f * Time.deltaTime);
+            Vector2 direction = (moveSpot[randomSpot].position - transform.position).normalized;
+
+            if (direction.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (direction.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+
+            if (Vector2.Distance(transform.position, moveSpot[randomSpot].position) < 0.2) 
+            {
+                if (waitTime <= 0)
+                {
+                    randomSpot = Random.Range(0, moveSpot.Length);
+                    waitTime += startTimeWait;
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                    animator.SetBool("IsMoving", false);
+                }
+            }
+        }
+
         if (damagebleCharacter.Targetable && detectionZone.detectedObjs.Count > 0)
         {
             animator.SetBool("IsMoving", true);
@@ -45,10 +85,6 @@ public class Slime : MonoBehaviour
             }
 
             rb.AddForce(direction * moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            animator.SetBool("IsMoving", false);
         }
     }
     void OnCollisionStay2D(Collision2D col)

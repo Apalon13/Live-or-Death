@@ -15,9 +15,7 @@ public class DetectionZone : MonoBehaviour
         {
             detectedObjs.Add(collider);
         }
-        
     }
-
     void OnTriggerExit2D(Collider2D collider)
     {        
         if (collider.gameObject.tag == tagTarget)
