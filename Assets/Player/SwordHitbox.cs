@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SwordHitbox : MonoBehaviour
 {
-    public float swordDamage = 1f;
+    public PlayerControler playerStats;
+
+    public float damage;
 
     public Collider2D swordCollider;
 
@@ -24,6 +26,11 @@ public class SwordHitbox : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        damage = playerStats.damage;   
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         IDamageable damageable = collider.GetComponent<IDamageable>();
@@ -35,7 +42,7 @@ public class SwordHitbox : MonoBehaviour
                 Vector2 dir = (collider.gameObject.transform.position - transform.position).normalized;
                 Vector2 knockback = dir * knocbackF;
 
-                damageable.OnHit(swordDamage, knockback);
+                damageable.OnHit(damage, knockback);
             }
             else
             {

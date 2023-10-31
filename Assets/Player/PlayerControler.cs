@@ -8,14 +8,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerControler : MonoBehaviour
 {
+    public float damage = 10;
 
-    public float moveSpeed = 50f;
+    public string tagTarget = "Item";
+
+    public float moveSpeed = 30f;
 
     public float maxSpeed = 8f;
 
     public GameObject swordHitbox;
 
     public float idleFriction = 0.9f;
+
+    public Collider2D col;
 
     Vector2 movemenInput = Vector2.zero;
 
@@ -30,12 +35,20 @@ public class PlayerControler : MonoBehaviour
     bool canMove = true;
     void Start()
     {
+        col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         swordCollider = swordHitbox.GetComponent<Collider2D>();
     }
-
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == tagTarget)
+        {
+            damage += col.gameObject.GetComponent<BaseItemstats>().damage;
+            Destroy(col.gameObject);
+        }
+    }
     private void FixedUpdate()  
     {
         if (canMove == true && movemenInput != Vector2.zero)
