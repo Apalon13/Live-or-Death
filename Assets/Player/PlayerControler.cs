@@ -20,8 +20,6 @@ public class PlayerControler : MonoBehaviour
 
     public float idleFriction = 0.9f;
 
-    public Collider2D col;
-
     Vector2 movemenInput = Vector2.zero;
 
     SpriteRenderer spriteRenderer;
@@ -35,7 +33,6 @@ public class PlayerControler : MonoBehaviour
     bool canMove = true;
     void Start()
     {
-        col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
