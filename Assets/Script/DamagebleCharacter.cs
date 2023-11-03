@@ -6,6 +6,8 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 {
     public bool disableSimulation = false;
 
+    public GameObject healthText;
+
     public float invincibilitiTime = 0.25f;
 
     public bool isinvincibilitiEnable = false;
@@ -39,6 +41,11 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             if (value < _health)
             {
                 animator.SetTrigger("Hit");
+                RectTransform textTransform = Instantiate(healthText).GetComponent<RectTransform>();
+                textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+
+                Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+                textTransform.SetParent(canvas.transform);
             }
 
             _health = value;

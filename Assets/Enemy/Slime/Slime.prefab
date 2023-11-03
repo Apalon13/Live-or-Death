@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableSimulation: 0
+  healthText: {fileID: 6085732536019662961, guid: 9fa67f3e012ad6b429b68d94b397552f, type: 3}
   invincibilitiTime: 0.25
   isinvincibilitiEnable: 0
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
