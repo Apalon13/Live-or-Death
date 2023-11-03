@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DamagebleCharacter : MonoBehaviour, IDamageable
 {
     public bool disableSimulation = false;
+
+    public GameObject healthText;
 
     public float invincibilitiTime = 0.25f;
 
@@ -117,7 +120,14 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
     {
         if(!isinvincibilitiEnable || !Invincible)
         {
+            GameObject textInstance = Instantiate(healthText);
+            TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
+            RectTransform textTransform = textInstance.GetComponent<RectTransform>();
+            textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+            Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+            textTransform.SetParent(canvas.transform);
             AudioManager.instance.Play("Damage");
+            textDa.text = damage.ToString();
             Health -= damage;
             rb.AddForce(knockback, ForceMode2D.Impulse);
         }
