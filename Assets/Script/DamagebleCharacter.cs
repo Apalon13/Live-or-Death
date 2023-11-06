@@ -11,6 +11,10 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     public float invincibilitiTime = 0.25f;
 
+    public GameObject enemy;
+
+    string tagEnemy1;
+
     public bool isinvincibilitiEnable = false;
 
     private float invincibleTimeElapsed = 0f;
@@ -34,6 +38,16 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         _defaultColor = _spriteRend.color;
+        if (enemy.tag == "Enemy")
+        {
+            tagEnemy1 = "Enemy";
+            print(tagEnemy1);
+        }
+        else if (enemy.tag == "Player")
+        {
+            tagEnemy1 = "Player";
+            print(tagEnemy1);
+        }
     }
     public float Health
     {
@@ -103,36 +117,42 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    public void OnHit(float damage)
+    public void OnHit(float damage, Vector2 knockback, string tagEnemy)
     {
-        if (!isinvincibilitiEnable || !Invincible)
+        if (tagEnemy == "Enemy")
         {
-            Health -= damage;
+            if ((!isinvincibilitiEnable || !Invincible) && enemy.tag != "Enemy")
+            {
+                GameObject textInstance = Instantiate(healthText);
+                TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
+                RectTransform textTransform = textInstance.GetComponent<RectTransform>();
+                textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+                Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+                textTransform.SetParent(canvas.transform);
+                AudioManager.instance.Play("Damage");
+                textDa.text = damage.ToString();
+                Health -= damage;
+                rb.AddForce(knockback, ForceMode2D.Impulse);
+            }
+        }
+        else if (tagEnemy == "Player")
+        {
+            if (!isinvincibilitiEnable || !Invincible)
+            {
+                GameObject textInstance = Instantiate(healthText);
+                TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
+                RectTransform textTransform = textInstance.GetComponent<RectTransform>();
+                textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+                Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+                textTransform.SetParent(canvas.transform);
+                AudioManager.instance.Play("Damage");
+                textDa.text = damage.ToString();
+                Health -= damage;
+                rb.AddForce(knockback, ForceMode2D.Impulse);
+            }
         }
 
         if (isinvincibilitiEnable && !Invincible)
-        {
-            Invincible = true;
-        }
-    }
-
-    public void OnHit(float damage, Vector2 knockback)
-    {
-        if(!isinvincibilitiEnable || !Invincible)
-        {
-            GameObject textInstance = Instantiate(healthText);
-            TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
-            RectTransform textTransform = textInstance.GetComponent<RectTransform>();
-            textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-            Canvas canvas = GameObject.FindObjectOfType<Canvas>();
-            textTransform.SetParent(canvas.transform);
-            AudioManager.instance.Play("Damage");
-            textDa.text = damage.ToString();
-            Health -= damage;
-            rb.AddForce(knockback, ForceMode2D.Impulse);
-        }
-
-        if(isinvincibilitiEnable && !Invincible)
         {
             Invincible = true;
         }

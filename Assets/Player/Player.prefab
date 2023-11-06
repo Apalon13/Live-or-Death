@@ -139,7 +139,6 @@ MonoBehaviour:
   maxSpeed: 8
   swordHitbox: {fileID: 7937335611185967529}
   idleFriction: 0.9
-  col: {fileID: 0}
   rb: {fileID: 6144810107727731542}
 --- !u!50 &6144810107727731542
 Rigidbody2D:
@@ -248,7 +247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disableSimulation: 1
   healthText: {fileID: 6085732536019662961, guid: 9fa67f3e012ad6b429b68d94b397552f, type: 3}
-  invincibilitiTime: 0.5
+  invincibilitiTime: 1
+  enemy: {fileID: 4946414947893099287}
   isinvincibilitiEnable: 1
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
   _health: 3
@@ -345,6 +345,7 @@ MonoBehaviour:
   playerStats: {fileID: 7149872254872766144}
   damage: 0
   swordCollider: {fileID: 3891863046471203392}
+  tagEnemy: Player
   knocbackF: 5
   player: {fileID: 4946414947893099287}
   faceRight: {x: -0.0854, y: -0.0511, z: 0}

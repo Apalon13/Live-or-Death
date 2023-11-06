@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerControler : MonoBehaviour
 {
+    public static string tagObj = "Player";
+
     public float damage = 10;
 
     public string tagTarget = "Item";

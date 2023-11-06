@@ -10,6 +10,8 @@ public class SwordHitbox : MonoBehaviour
 
     public Collider2D swordCollider;
 
+    public string tagEnemy = "Player";
+
     public float knocbackF = 200f;
 
     public GameObject player; 
@@ -42,7 +44,7 @@ public class SwordHitbox : MonoBehaviour
                 Vector2 dir = (collider.gameObject.transform.position - transform.position).normalized;
                 Vector2 knockback = dir * knocbackF;
 
-                damageable.OnHit(damage, knockback);
+                damageable.OnHit(damage, knockback, tagEnemy);
             }
             else
             {

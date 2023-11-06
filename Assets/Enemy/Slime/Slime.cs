@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
+    public string tagObj = "Enemy";
+
     public float damage = 1f;
 
     public float knocbackF = 20f;
@@ -12,6 +14,8 @@ public class Slime : MonoBehaviour
     public float moveSpeed = 50;
 
     public DetectionZone detectionZone;
+
+    public string tagEnemy = "Enemy";
 
     private float waitTime;
 
@@ -40,9 +44,14 @@ public class Slime : MonoBehaviour
     }
     void Update()
     {
-        if (damagebleCharacter.Targetable && detectionZone.detectedObjs.Count == 0)
+        if (moveSpot.Length == 0 && damagebleCharacter.Targetable && detectionZone.detectedObjs.Count == 0)
         {
-            animator.SetBool("IsMoving", true);
+            rb.velocity = Vector2.zero;
+            animator.SetBool("IsMoving", false);
+        }
+        if (damagebleCharacter.Targetable && detectionZone.detectedObjs.Count == 0 && moveSpot.Length != 0)
+        {
+            animator.SetBool("IsMoving", true); 
             transform.position = Vector2.MoveTowards(transform.position, moveSpot[randomSpot].position, 0.6f * Time.deltaTime);
             Vector2 direction = (moveSpot[randomSpot].position - transform.position).normalized;
 
@@ -96,8 +105,7 @@ public class Slime : MonoBehaviour
         {
             Vector2 dir = (collider.gameObject.transform.position - transform.position).normalized;
             Vector2 knockback = dir * knocbackF;
-
-            damageable.OnHit(damage, knockback);
+            damageable.OnHit(damage, knockback, tagEnemy);
         }
         else
         {
