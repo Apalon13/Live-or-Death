@@ -1,0 +1,1262 @@
+fileFormatVersion: 2
+guid: 4ae4923e0f1588944b62324ca9a8d96b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sum tile_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 180
+        width: 76
+        height: 92
+      alignment: 9
+      pivot: {x: 0.43796444, y: 0.08403264}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -30, y: -46}
+        - {x: -30, y: -23}
+        - {x: 30, y: -23}
+        - {x: 30, y: -46}
+        - {x: -25, y: -46}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e93013c5ecd8142933d670e8c73b10
+      internalID: 622699926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 243
+        width: 18
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67f1bf659533474eb27bdb58d53f142
+      internalID: 1037068905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 212
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9471a0b01c6f97740865cb6b2ce32f20
+      internalID: -1413096106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_3
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 192
+        width: 30
+        height: 14
+      alignment: 9
+      pivot: {x: 0.4999995, y: 0.20401438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1958c6dd876823a49a132567f4e1f4ca
+      internalID: -777903897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_9
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 161
+        width: 11
+        height: 29
+      alignment: 9
+      pivot: {x: 0.519826, y: 0.13901651}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4ecd9a1b9a6a449934484820342063
+      internalID: 2144193133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 160
+        width: 11
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5437414, y: 0.09988861}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329d7cbc62465e44e9893f929c3bc62d
+      internalID: 353535518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 134
+        width: 32
+        height: 22
+      alignment: 9
+      pivot: {x: 0.49252748, y: 0.13044947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -8}
+        - {x: -15, y: -1}
+        - {x: 15, y: -3}
+        - {x: 16, y: -6}
+        - {x: 8, y: -10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c50ab52fbfcb94abb5c9e50f646019
+      internalID: 2020378595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_20
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 112
+        width: 36
+        height: 48
+      alignment: 9
+      pivot: {x: 0.52898955, y: 0.108636856}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -22}
+        - {x: -4, y: -17}
+        - {x: 6, y: -16}
+        - {x: 10, y: -22}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263b65a226a7a3b42bdeaa6a992f188e
+      internalID: -555607269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_21
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 112
+        width: 36
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5237342, y: 0.10584688}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ac61664f789c64d9ad64ae2f8c83c7
+      internalID: -959376726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 113
+        width: 31
+        height: 15
+      alignment: 9
+      pivot: {x: 0.48071608, y: 0.24493764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1.5, y: -6.5}
+        - {x: -2.5, y: -3.5}
+        - {x: -13.5, y: -3.5}
+        - {x: -15.5, y: 0.5}
+        - {x: -12.5, y: 1.5}
+        - {x: 12.5, y: 0.5}
+        - {x: 13.5, y: -4.5}
+        - {x: 10.5, y: -6.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1360cd07f81d3dc408720202a4324d5a
+      internalID: 2000635528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_23
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 81
+        width: 16
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5278194, y: 0.12907587}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -2, y: -15}
+        - {x: -2, y: -8}
+        - {x: 2, y: -8}
+        - {x: 2, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8c0847266c2684f834ea8b6b1851bf
+      internalID: 98285951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_24
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 64
+        width: 36
+        height: 48
+      alignment: 9
+      pivot: {x: 0.50000024, y: 0.11948506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1, y: -15}
+        - {x: -4, y: -17}
+        - {x: -7, y: -21}
+        - {x: 2, y: -22}
+        - {x: 8, y: -21}
+        - {x: 6, y: -18}
+        - {x: 3, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7e507d3aab3f145ba195b9be70e6af
+      internalID: -481166834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 15
+        height: 16
+      alignment: 9
+      pivot: {x: 0.48021755, y: 0.24962664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4.5, y: -6}
+        - {x: -7.5, y: -2}
+        - {x: -7.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 4.5, y: -5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25fd25c6a482fb4aa4c8c25e29817de
+      internalID: 1834980406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_26
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 65
+        width: 14
+        height: 14
+      alignment: 9
+      pivot: {x: 0.47880444, y: 0.2562501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -6}
+        - {x: -7, y: -2}
+        - {x: -6, y: -1}
+        - {x: 6, y: -1}
+        - {x: 7, y: -2}
+        - {x: 4, y: -6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7ec3ecc072bae4eab7afa552c92322
+      internalID: 790710020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_27
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 64
+        width: 14
+        height: 16
+      alignment: 9
+      pivot: {x: 0.51059806, y: 0.24962664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -2, y: -7}
+        - {x: -2, y: -3}
+        - {x: 2, y: -3}
+        - {x: 2, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1267fce71a60e04fa45496e4a998e03
+      internalID: -159286719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_30
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 54
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2786e32463b7fbc438feaf1f922175be
+      internalID: 146523818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_31
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 54
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e6b830ebb43394286ed3fff46d7916
+      internalID: -1364537128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_32
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 41
+        width: 30
+        height: 21
+      alignment: 9
+      pivot: {x: 0.4817861, y: 0.1487354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed466f465a63bfc4c8b71e04b53b9f41
+      internalID: -411762732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_33
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 32
+        width: 14
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5233449, y: 0.1459403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8348a90c20f017043b4b1c0dac12017c
+      internalID: -1973824153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_34
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 32
+        width: 14
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5155629, y: 0.1459403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb781de1fc365c4c87b7a331f56275c
+      internalID: -759243375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_35
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 17
+        width: 13
+        height: 14
+      alignment: 9
+      pivot: {x: 0.49162, y: 0.1576128}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f65154dc2318f49a54f02bdb0e4187
+      internalID: -1027401397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_36
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 17
+        width: 14
+        height: 10
+      alignment: 9
+      pivot: {x: 0.46887425, y: 0.26032868}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9e26c1b744b56448c3dc2f20f62426
+      internalID: -576978369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_37
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 17
+        width: 14
+        height: 10
+      alignment: 9
+      pivot: {x: 0.4766557, y: 0.19496384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a20567fddc3de4da7a63c910dbef98
+      internalID: 24862382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_38
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 9
+        width: 30
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14223017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1356209ed0c52864e8df366183ca9413
+      internalID: -1451833442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_39
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 3
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5242089, y: 0.20948881}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45231c9931f0a94cb0574fc444ecb6f
+      internalID: -417084099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_40
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 3
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22159344}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9269833dd95cc34bae0eec077171d9d
+      internalID: 773165779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 52
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40eda6dd6d94a34e9f89a4de7c1ad8a
+      internalID: 1418131882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_5
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 52
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8986d99a65370440afcd9f38f854e3f
+      internalID: 1550015294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 3
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.52165306, y: 0.18964322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2661a74f4aea56348977610c138f6edb
+      internalID: -1477536521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_7
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2
+        width: 11
+        height: 11
+      alignment: 9
+      pivot: {x: 0.48819005, y: 0.15158701}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fff7a627aa84c4495ed8148c2145ea
+      internalID: -2070890880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5200951, y: 0.17345655}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: -7}
+        - {x: -6, y: -3}
+        - {x: 6, y: -3}
+        - {x: 6, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a15e833089cc814eaaf0db4fcb3ebf5
+      internalID: -1608191086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14833784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: -7}
+        - {x: -6, y: -3}
+        - {x: 6, y: -3}
+        - {x: 6, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7623c4b1b1356d64c9f6a1de18f5447c
+      internalID: -1845986547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_12
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 33
+        width: 10
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1877506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32eecacd21fab8e4dbbd63d3ac3cbd44
+      internalID: 1590527926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15834093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8732fc7f0f5cb843887cb3070f4c3b6
+      internalID: 715227491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895ffcb8aa349eb42aa6ed9477b7705a
+      internalID: 418715871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 49
+        width: 14
+        height: 14
+      alignment: 9
+      pivot: {x: 0.49999985, y: 0.15963091}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -6}
+        - {x: -7, y: -3}
+        - {x: -7, y: -1}
+        - {x: 7, y: -1}
+        - {x: 7, y: -3}
+        - {x: 4, y: -6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e3aef58d314f5439ce8be3654cfb35
+      internalID: 1625820388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_16
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 49
+        width: 13
+        height: 15
+      alignment: 9
+      pivot: {x: 0.4948371, y: 0.13310419}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e915fd5ef74d7894db0d3422d95aa0d5
+      internalID: 744476581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_17
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 64
+        width: 36
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5185759, y: 0.09039418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97c6cec552008f48a579db24e14968e
+      internalID: 1522918797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_18
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 64
+        width: 36
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5107371, y: 0.1027387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -22}
+        - {x: -4, y: -17}
+        - {x: 6, y: -17}
+        - {x: 9, y: -22}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbec983eee52d44e9302c7d19878d32
+      internalID: -1011319965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_28
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1038ab1f5d5b6408cc5164803bc7df
+      internalID: -1832470266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_29
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed1639ba41ed564388232e2a3817bc4
+      internalID: -586954134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2f5ec293de11c4baa0f05fe1059b83
+      internalID: -374756942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_42
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680ca10ba66302d4db0d571ec4ebe627
+      internalID: -1030210023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_43
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4166d966f04426a41a836b315a1305b7
+      internalID: 893780595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_44
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e543b2b508fe46942a0a33b43b3adfe6
+      internalID: -338417265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_45
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3abfad1c7773e754aaca689e49109f57
+      internalID: -1612543482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_46
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28358eedb95108a4293542b8df2fc621
+      internalID: 718278638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sum tile_47
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7146899ad2c8ca644bdc39ae188a51b6
+      internalID: 424070323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sum tile_0: 622699926
+      sum tile_1: 1037068905
+      sum tile_10: 353535518
+      sum tile_11: -1845986547
+      sum tile_12: 1590527926
+      sum tile_13: 715227491
+      sum tile_14: 418715871
+      sum tile_15: 1625820388
+      sum tile_16: 744476581
+      sum tile_17: 1522918797
+      sum tile_18: -1011319965
+      sum tile_19: 2020378595
+      sum tile_2: -1413096106
+      sum tile_20: -555607269
+      sum tile_21: -959376726
+      sum tile_22: 2000635528
+      sum tile_23: 98285951
+      sum tile_24: -481166834
+      sum tile_25: 1834980406
+      sum tile_26: 790710020
+      sum tile_27: -159286719
+      sum tile_28: -1832470266
+      sum tile_29: -586954134
+      sum tile_3: -777903897
+      sum tile_30: 146523818
+      sum tile_31: -1364537128
+      sum tile_32: -411762732
+      sum tile_33: -1973824153
+      sum tile_34: -759243375
+      sum tile_35: -1027401397
+      sum tile_36: -576978369
+      sum tile_37: 24862382
+      sum tile_38: -1451833442
+      sum tile_39: -417084099
+      sum tile_4: 1418131882
+      sum tile_40: 773165779
+      sum tile_41: -374756942
+      sum tile_42: -1030210023
+      sum tile_43: 893780595
+      sum tile_44: -338417265
+      sum tile_45: -1612543482
+      sum tile_46: 718278638
+      sum tile_47: 424070323
+      sum tile_5: 1550015294
+      sum tile_6: -1477536521
+      sum tile_7: -2070890880
+      sum tile_8: -1608191086
+      sum tile_9: 2144193133
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

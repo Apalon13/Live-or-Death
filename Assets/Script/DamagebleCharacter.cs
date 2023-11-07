@@ -126,7 +126,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
                 GameObject textInstance = Instantiate(healthText);
                 TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
                 RectTransform textTransform = textInstance.GetComponent<RectTransform>();
-                textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+                textTransform.transform.position = UnityEngine.Camera.main.WorldToScreenPoint(gameObject.transform.position);
                 Canvas canvas = GameObject.FindObjectOfType<Canvas>();
                 textTransform.SetParent(canvas.transform);
                 AudioManager.instance.Play("Damage");
@@ -142,7 +142,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
                 GameObject textInstance = Instantiate(healthText);
                 TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
                 RectTransform textTransform = textInstance.GetComponent<RectTransform>();
-                textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+                textTransform.transform.position = UnityEngine.Camera.main.WorldToScreenPoint(gameObject.transform.position);
                 Canvas canvas = GameObject.FindObjectOfType<Canvas>();
                 textTransform.SetParent(canvas.transform);
                 AudioManager.instance.Play("Damage");
