@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
+using UnityEngine.UIElements;
 
 public class Doors : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class Doors : MonoBehaviour
     public GameObject fade;
     public GameObject openDoor;
     public GameObject closeDoor;
+    public Vector3 pposition;
+    public VectorValue pos;
     public int level;
     void Update()
     {
@@ -19,6 +23,7 @@ public class Doors : MonoBehaviour
             {
                 fade.GetComponent<Animator>().SetTrigger("Fade");
                 fade.GetComponent<ChangesScene>().levelToload = level;
+                pos.inilealValue = pposition;
                 closeDoor.SetActive(false);
                 openDoor.SetActive(true);
             }

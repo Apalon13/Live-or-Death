@@ -10,6 +10,8 @@ public class PlayerControler : MonoBehaviour
 {
     public static string tagObj = "Player";
 
+    public VectorValue pos;
+
     public float damage = 10;
 
     public string tagTarget = "Item";
@@ -35,6 +37,7 @@ public class PlayerControler : MonoBehaviour
     bool canMove = true;
     void Start()
     {
+        transform.position = pos.inilealValue;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -50,6 +53,7 @@ public class PlayerControler : MonoBehaviour
     }
     private void FixedUpdate()  
     {
+        print(transform.position);
         if (canMove == true && movemenInput != Vector2.zero)
         {
             rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movemenInput * moveSpeed * Time.deltaTime), maxSpeed);

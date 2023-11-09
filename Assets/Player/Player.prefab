@@ -509,6 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18806df65a47fba42ba9109fb5879eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pos: {fileID: 11400000, guid: c401edcb89cbe7649b49654e82c2bd50, type: 2}
   damage: 10
   tagTarget: Item
   moveSpeed: 23
