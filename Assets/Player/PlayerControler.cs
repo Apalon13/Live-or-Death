@@ -18,6 +18,8 @@ public class PlayerControler : MonoBehaviour
 
     public float moveSpeed = 30f;
 
+    public DamagebleCharacter character;
+
     public float maxSpeed = 8f;
 
     public GameObject swordHitbox;
@@ -28,32 +30,62 @@ public class PlayerControler : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    private bool active;
+
     public Rigidbody2D rb;
 
     Animator animator;
+
+    public GameObject b;
 
     Collider2D swordCollider;
 
     bool canMove = true;
     void Start()
     {
+        b.SetActive(false);
+        active = false;
         transform.position = pos.inilealValue;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         swordCollider = swordHitbox.GetComponent<Collider2D>();
     }
-    private void OnTriggerEnter2D(Collider2D col)
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            active = true;
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            active = false;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == tagTarget)
         {
-            damage += col.gameObject.GetComponent<BaseItemstats>().damage;
-            Destroy(col.gameObject);
+            b.SetActive(true);
+            if (active)
+            {
+                damage += col.gameObject.GetComponent<BaseItemstats>().damage;
+                moveSpeed += col.gameObject.GetComponent<BaseItemstats>().speed;
+                character._health += col.gameObject.GetComponent<BaseItemstats>().health;
+                Destroy(col.gameObject);
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == tagTarget)
+        {
+            b.SetActive(false);
         }
     }
     private void FixedUpdate()  
     {
-        print(transform.position);
         if (canMove == true && movemenInput != Vector2.zero)
         {
             rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movemenInput * moveSpeed * Time.deltaTime), maxSpeed);

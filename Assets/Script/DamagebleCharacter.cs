@@ -13,6 +13,8 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     public GameObject enemy;
 
+    public GameObject loot;
+
     string tagEnemy1;
 
     public bool isinvincibilitiEnable = false;
@@ -20,6 +22,8 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
     private float invincibleTimeElapsed = 0f;
 
     public Color DamageColor = Color.red;
+
+    public float cLoot;
 
     Color _defaultColor;
 
@@ -62,8 +66,29 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
             if (_health <= 0)
             {
-                animator.SetBool("Defeated", true);
-                Targetable = false;
+                if (loot == null)
+                {
+                    animator.SetBool("Defeated", true);
+                    Targetable = false;
+                }
+                else
+                {
+                    if (cLoot >= Random.Range(0, 100))
+                    {
+                        GameObject Loot = Instantiate(loot, transform.position, Quaternion.identity);
+                        animator.SetBool("Defeated", true);
+                        Targetable = false;
+                        print("123");
+                    }
+                    else
+                    {
+                        animator.SetBool("Defeated", true);
+                        Targetable = false;
+                        print("321");
+                    }
+                    
+                }
+                
             }
         }
         get
