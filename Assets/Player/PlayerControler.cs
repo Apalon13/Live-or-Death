@@ -72,7 +72,7 @@ public class PlayerControler : MonoBehaviour
             {
                 damage += col.gameObject.GetComponent<BaseItemstats>().damage;
                 moveSpeed += col.gameObject.GetComponent<BaseItemstats>().speed;
-                character._health += col.gameObject.GetComponent<BaseItemstats>().health;
+                character._maxhealth += col.gameObject.GetComponent<BaseItemstats>().health;
                 Destroy(col.gameObject);
             }
         }

@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagObj: Enemy
-  damage: 1
+  damage: 7
   knocbackF: 5
   moveSpeed: 500
   detectionZone: {fileID: 7570876702542824631}
@@ -213,7 +213,8 @@ MonoBehaviour:
   isinvincibilitiEnable: 0
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
   cLoot: 100
-  _health: 30
+  _health: 0
+  _maxhealth: 30
 --- !u!1 &4568183912120022170
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,8 +35,17 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     Collider2D physicsCollider;
 
+    public float _health;
+
+    public float _maxhealth;
+
+    bool _targetable = true;
+
+    bool _invincible = false;
+
     private void Start()
     {
+        _health = _maxhealth;
         _spriteRend = GetComponent<SpriteRenderer>();
         physicsCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
@@ -130,13 +139,6 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             }
         }
     }
-
-    public float _health = 3;
-
-    bool _targetable = true;
-
-    bool _invincible = false;
-
     void RemoveEnemy()
     {
         Destroy(gameObject);

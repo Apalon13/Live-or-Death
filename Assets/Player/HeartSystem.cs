@@ -2,45 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeartSystem : MonoBehaviour
 {
-    float health;
-    public GameObject Heart1, Heart2, Heart3;
-    public DamagebleCharacter player;
+    public Slider slider;
 
-    void Start()
+    public DamagebleCharacter health;
+
+    private void Start()
     {
-        Heart1.SetActive(true);
-        Heart2.SetActive(true);
-        Heart3.SetActive(true);
+        SetMaxHealth(health._maxhealth);
     }
-
-    void Update()
+    private void Update()
     {
-        health = player.Health;
-        switch (health)
-        {
-            case 3:
-                Heart1.SetActive(true);
-                Heart2.SetActive(true);
-                Heart3.SetActive(true);
-                break;
-            case 2:
-                Heart1.SetActive(true);
-                Heart2.SetActive(true);
-                Heart3.SetActive(false);
-                break;
-            case 1:
-                Heart1.SetActive(true);
-                Heart2.SetActive(false);
-                Heart3.SetActive(false);
-                break;
-            case 0:
-                Heart1.SetActive(false);
-                Heart2.SetActive(false);
-                Heart3.SetActive(false);
-                break;
-        }   
+        SetHealth(health._health);
+    }
+    public void SetMaxHealth(float health)
+    {
+        slider.maxValue = health;
+        slider.value = health;
+    }
+    public void SetHealth(float health)
+    {
+        slider.value = health;
     }
 }
