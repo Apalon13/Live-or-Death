@@ -13,7 +13,7 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     public GameObject enemy;
 
-    public GameObject loot;
+    public GameObject[] loots;
 
     string tagEnemy1;
 
@@ -62,6 +62,29 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             print(tagEnemy1);
         }
     }
+    void generateLoot()
+    {
+        var range = Random.Range(0f, 101f);
+        print(range);
+        if (loots.Length == 0)
+        {
+            return;
+        }
+        else
+        {
+            if (80f > range)
+            {
+                GameObject Loot = Instantiate(loots[0], transform.position, Quaternion.identity);
+            }else if (30f > range)
+            {
+                GameObject Loot = Instantiate(loots[1], transform.position, Quaternion.identity);
+            }else if (5f > range)
+            {
+                GameObject Loot = Instantiate(loots[2], transform.position, Quaternion.identity);
+            }
+        }
+
+    }
     public float Health
     {
         set
@@ -75,27 +98,16 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
             if (_health <= 0)
             {
-                if (loot == null)
+                if (loots.Length == 0)
                 {
                     animator.SetBool("Defeated", true);
                     Targetable = false;
                 }
                 else
                 {
-                    if (cLoot >= Random.Range(0, 100))
-                    {
-                        GameObject Loot = Instantiate(loot, transform.position, Quaternion.identity);
-                        animator.SetBool("Defeated", true);
-                        Targetable = false;
-                        print("123");
-                    }
-                    else
-                    {
-                        animator.SetBool("Defeated", true);
-                        Targetable = false;
-                        print("321");
-                    }
-                    
+                    generateLoot();
+                    animator.SetBool("Defeated", true);
+                    Targetable = false;
                 }
                 
             }
@@ -151,14 +163,23 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             if ((!isinvincibilitiEnable || !Invincible) && enemy.tag != "Enemy")
             {
                 GameObject textInstance = Instantiate(healthText);
+
                 TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
+
                 RectTransform textTransform = textInstance.GetComponent<RectTransform>();
+
                 textTransform.transform.position = UnityEngine.Camera.main.WorldToScreenPoint(gameObject.transform.position);
+
                 Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+
                 textTransform.SetParent(canvas.transform);
+
                 AudioManager.instance.Play("Damage");
+
                 textDa.text = damage.ToString();
+
                 Health -= damage;
+
                 rb.AddForce(knockback, ForceMode2D.Impulse);
             }
         }
@@ -167,14 +188,23 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
             if (!isinvincibilitiEnable || !Invincible)
             {
                 GameObject textInstance = Instantiate(healthText);
+
                 TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
+
                 RectTransform textTransform = textInstance.GetComponent<RectTransform>();
+
                 textTransform.transform.position = UnityEngine.Camera.main.WorldToScreenPoint(gameObject.transform.position);
+
                 Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+
                 textTransform.SetParent(canvas.transform);
+
                 AudioManager.instance.Play("Damage");
+
                 textDa.text = damage.ToString();
+
                 Health -= damage;
+
                 rb.AddForce(knockback, ForceMode2D.Impulse);
             }
         }
