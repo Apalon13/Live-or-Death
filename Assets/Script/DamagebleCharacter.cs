@@ -15,15 +15,11 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
 
     public GameObject[] loots;
 
-    string tagEnemy1;
-
     public bool isinvincibilitiEnable = false;
 
     private float invincibleTimeElapsed = 0f;
 
     public Color DamageColor = Color.red;
-
-    public float cLoot;
 
     Color _defaultColor;
 
@@ -51,16 +47,6 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         _defaultColor = _spriteRend.color;
-        if (enemy.tag == "Enemy")
-        {
-            tagEnemy1 = "Enemy";
-            print(tagEnemy1);
-        }
-        else if (enemy.tag == "Player")
-        {
-            tagEnemy1 = "Player";
-            print(tagEnemy1);
-        }
     }
     void generateLoot()
     {
@@ -72,18 +58,18 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         }
         else
         {
-            if (80f > range)
-            {
-                GameObject Loot = Instantiate(loots[0], transform.position, Quaternion.identity);
-            }else if (30f > range)
+            if (30f > range)
             {
                 GameObject Loot = Instantiate(loots[1], transform.position, Quaternion.identity);
-            }else if (5f > range)
+            }
+            else
             {
-                GameObject Loot = Instantiate(loots[2], transform.position, Quaternion.identity);
+                if (80f > range)
+                {
+                    GameObject Loot = Instantiate(loots[0], transform.position, Quaternion.identity);
+                }
             }
         }
-
     }
     public float Health
     {
@@ -156,29 +142,34 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
+    public void damageText(float damage)
+    {
+        GameObject textInstance = Instantiate(healthText);
+
+        TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
+
+        RectTransform textTransform = textInstance.GetComponent<RectTransform>();
+
+        textTransform.transform.position = UnityEngine.Camera.main.WorldToScreenPoint(gameObject.transform.position);
+
+        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+
+        textTransform.SetParent(canvas.transform);
+
+        textDa.text = damage.ToString();
+    }
+
     public void OnHit(float damage, Vector2 knockback, string tagEnemy)
     {
         if (tagEnemy == "Enemy")
         {
             if ((!isinvincibilitiEnable || !Invincible) && enemy.tag != "Enemy")
-            {
-                GameObject textInstance = Instantiate(healthText);
+            {                
+                Health -= damage;
 
-                TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
-
-                RectTransform textTransform = textInstance.GetComponent<RectTransform>();
-
-                textTransform.transform.position = UnityEngine.Camera.main.WorldToScreenPoint(gameObject.transform.position);
-
-                Canvas canvas = GameObject.FindObjectOfType<Canvas>();
-
-                textTransform.SetParent(canvas.transform);
+                damageText(damage);
 
                 AudioManager.instance.Play("Damage");
-
-                textDa.text = damage.ToString();
-
-                Health -= damage;
 
                 rb.AddForce(knockback, ForceMode2D.Impulse);
             }
@@ -187,23 +178,11 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
         {
             if (!isinvincibilitiEnable || !Invincible)
             {
-                GameObject textInstance = Instantiate(healthText);
-
-                TextMeshProUGUI textDa = textInstance.GetComponent<TextMeshProUGUI>();
-
-                RectTransform textTransform = textInstance.GetComponent<RectTransform>();
-
-                textTransform.transform.position = UnityEngine.Camera.main.WorldToScreenPoint(gameObject.transform.position);
-
-                Canvas canvas = GameObject.FindObjectOfType<Canvas>();
-
-                textTransform.SetParent(canvas.transform);
-
                 AudioManager.instance.Play("Damage");
 
-                textDa.text = damage.ToString();
-
                 Health -= damage;
+
+                damageText(damage);
 
                 rb.AddForce(knockback, ForceMode2D.Impulse);
             }

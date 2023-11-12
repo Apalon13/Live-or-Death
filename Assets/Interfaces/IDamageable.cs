@@ -7,4 +7,5 @@ public interface IDamageable
     public bool Invincible { set; get; }
     public void OnHit(float damage, Vector2 knockback, string tagEnemy);
     public void OnObjectDestroy();
+    public void damageText(float damage);
 }
