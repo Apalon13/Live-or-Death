@@ -18,6 +18,8 @@ public class PlayerControler : MonoBehaviour
 
     public float moveSpeed = 30f;
 
+    public GameObject inventory;
+
     public DamagebleCharacter character;
 
     public float maxSpeed = 8f;
@@ -32,6 +34,8 @@ public class PlayerControler : MonoBehaviour
 
     private bool active;
 
+    bool invOn;
+
     public Rigidbody2D rb;
 
     Animator animator;
@@ -43,6 +47,8 @@ public class PlayerControler : MonoBehaviour
     bool canMove = true;
     void Start()
     {
+        inventory.SetActive(false);
+        invOn = false;
         b.SetActive(false);
         active = false;
         transform.position = pos.inilealValue;
@@ -52,8 +58,25 @@ public class PlayerControler : MonoBehaviour
         swordCollider = swordHitbox.GetComponent<Collider2D>();
     }
 
+    bool inventoryOn()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            invOn = !invOn;
+        }
+        return invOn;
+    }
     void Update()
     {
+        inventoryOn();
+        if (invOn)
+        {
+            inventory.SetActive(true);
+        }
+        else
+        {
+            inventory.SetActive(false);
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             active = true;

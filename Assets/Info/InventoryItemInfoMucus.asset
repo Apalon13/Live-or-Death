@@ -16,4 +16,4 @@ MonoBehaviour:
   _title: Mucus
   _description: Sticks to everything
   _spriteIcoin: {fileID: 1625820388, guid: 4ae4923e0f1588944b62324ca9a8d96b, type: 3}
-  _maxItemsInInventotySlot: 10
+  _maxItemsInInventotySlot: 1

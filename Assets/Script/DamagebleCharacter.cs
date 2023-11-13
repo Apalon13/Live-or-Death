@@ -51,7 +51,6 @@ public class DamagebleCharacter : MonoBehaviour, IDamageable
     void generateLoot()
     {
         var range = Random.Range(0f, 101f);
-        print(range);
         if (loots.Length == 0)
         {
             return;
