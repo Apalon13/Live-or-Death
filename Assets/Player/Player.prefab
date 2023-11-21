@@ -257,8 +257,8 @@ MonoBehaviour:
   OnAnimationEventTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8290998628231214038}
-        m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
+      - m_Target: {fileID: 6840139742111733181}
+        m_TargetAssemblyTypeName: NewWeaponParent, Assembly-CSharp
         m_MethodName: ResetIsAttacking
         m_Mode: 1
         m_Arguments:
@@ -272,8 +272,8 @@ MonoBehaviour:
   OnAttackPerformed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8290998628231214038}
-        m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
+      - m_Target: {fileID: 6840139742111733181}
+        m_TargetAssemblyTypeName: NewWeaponParent, Assembly-CSharp
         m_MethodName: DetectColliders
         m_Mode: 1
         m_Arguments:
@@ -377,10 +377,10 @@ GameObject:
   - component: {fileID: 4769238222024034653}
   - component: {fileID: 4626642918364277422}
   - component: {fileID: 3681570853164026542}
-  - component: {fileID: 8547709061880174930}
   - component: {fileID: 3157087164107675298}
-  - component: {fileID: 8574860606914812465}
-  - component: {fileID: 5998112274764443473}
+  - component: {fileID: 1109379096037617382}
+  - component: {fileID: 4695318768718812231}
+  - component: {fileID: 2495568204273094284}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -617,7 +617,7 @@ MonoBehaviour:
   invincibilitiTime: 0.25
   isinvincibilitiEnable: 1
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  st: {fileID: 8574860606914812465}
+  st: {fileID: 4695318768718812231}
   _health: 0
   _maxhealth: 30
 --- !u!114 &4769238222024034653
@@ -692,18 +692,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: {fileID: 11400000, guid: c401edcb89cbe7649b49654e82c2bd50, type: 2}
---- !u!114 &8547709061880174930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3587743131518954477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f4782e68d607d949a443f2ea7178d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3157087164107675298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,8 +708,20 @@ MonoBehaviour:
   acceleration: 50
   deacceleration: 100
   currentSpeed: 0
-  st: {fileID: 8574860606914812465}
---- !u!114 &8574860606914812465
+  st: {fileID: 4695318768718812231}
+--- !u!114 &1109379096037617382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587743131518954477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f4782e68d607d949a443f2ea7178d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4695318768718812231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -736,7 +736,7 @@ MonoBehaviour:
   damage: 10
   speed: 2
   hp: 30
---- !u!114 &5998112274764443473
+--- !u!114 &2495568204273094284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1122,7 +1122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8450040497736333693}
-  - component: {fileID: 8290998628231214038}
+  - component: {fileID: 6840139742111733181}
   m_Layer: 6
   m_Name: WeaponParent
   m_TagString: Untagged
@@ -1146,7 +1146,7 @@ Transform:
   - {fileID: 6203403804063803851}
   m_Father: {fileID: 9646986649070778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8290998628231214038
+--- !u!114 &6840139742111733181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1161,8 +1161,8 @@ MonoBehaviour:
   characterSprite: {fileID: 3153570172909521687}
   weaponSprite: {fileID: 7988236962144928044}
   animator: {fileID: 8064781226312265228}
-  stats: {fileID: 8574860606914812465}
+  stats: {fileID: 4695318768718812231}
   delay: 0.5
   damage: 0
   circlOrygin: {fileID: 2556724015090563770}
-  radius: 0.1
+  radius: 0.11

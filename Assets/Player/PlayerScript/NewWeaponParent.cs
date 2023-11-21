@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponParent : MonoBehaviour
+public class NewWeaponParent : MonoBehaviour
 {
     public SpriteRenderer characterSprite, weaponSprite;
     [SerializeField] private Animator animator;
-    [SerializeField] private Stats stats;
+    [SerializeField] private MainStats stats;
     public Vector2 PointerPosition {  get; set; }
     public float delay = 0.5f;
     public float damage;

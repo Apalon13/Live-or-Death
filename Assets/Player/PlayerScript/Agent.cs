@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 
 public class Agent : MonoBehaviour
 {
-    private AgentAnimations agentAnimations;
+    private NewAgentAnimations agentAnimations;
     public VectorValue pos;
     private AgentMover agentMover;
-    private WeaponParent weaponParent;
+    private NewWeaponParent weaponParent;
     private Vector2 pointerInput, movementInput;
     public Vector2 PointerInput { get => pointerInput; set => pointerInput = value; }
     public Vector2 MovementInput { get => movementInput; set => movementInput = value; }
@@ -29,8 +29,8 @@ public class Agent : MonoBehaviour
     private void Awake()
     {
         transform.position = pos.inilealValue;
-        agentAnimations = GetComponentInChildren<AgentAnimations>();
-        weaponParent = GetComponentInChildren<WeaponParent>();
+        agentAnimations = GetComponentInChildren<NewAgentAnimations>();
+        weaponParent = GetComponentInChildren<NewWeaponParent>();
         agentMover = GetComponent<AgentMover>();
     }
 

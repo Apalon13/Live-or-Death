@@ -19,7 +19,7 @@ public class HP : MonoBehaviour, IDamageable
     Rigidbody2D rb;
     SpriteRenderer _spriteRend;
     Collider2D physicsCollider;
-    public Stats st;
+    public MainStats st;
     public float _health;
     public float _maxhealth;
     bool _targetable = true;

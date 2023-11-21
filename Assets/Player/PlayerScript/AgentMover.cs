@@ -12,7 +12,7 @@ public class AgentMover : MonoBehaviour
     [SerializeField]
     private float currentSpeed = 0;
     private Vector2 oldMovementInput;
-    public Stats st;
+    public MainStats st;
     public Vector2 MovementInput { get; set; }
 
     private void Awake()

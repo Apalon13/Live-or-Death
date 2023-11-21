@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AgentAnimations : MonoBehaviour
+public class NewAgentAnimations : MonoBehaviour
 {
     private Animator animator;
     private SpriteRenderer sp;
