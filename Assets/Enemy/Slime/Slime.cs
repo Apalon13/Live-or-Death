@@ -5,33 +5,20 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-    public string tagObj = "Enemy";
-
     public float damage = 1f;
-
-    public float knocbackF = 20f;
-
-    public float moveSpeed = 50;
-
+    [SerializeField] private float maxSpeed = 2, acceleration = 50, deacceleration = 100;
+    private float currentSpeed = 0;
+    private Vector2 oldMovementInput;
+    public Vector2 MovementInput { get; set; }
     public DetectionZone detectionZone;
-
-    public string tagEnemy = "Enemy";
-
     private float waitTime;
-
     public float startTimeWait;
-
     public Transform[] moveSpot;
-
     private int randomSpot;
-
     Rigidbody2D rb;
-
     Animator animator;
-
     SpriteRenderer spriteRenderer;
-
-    DamagebleCharacter damagebleCharacter;
+    HP Hp;
 
     void Start()
     {
@@ -40,16 +27,16 @@ public class Slime : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        damagebleCharacter = GetComponent<DamagebleCharacter>();
+        Hp = GetComponent<HP>();
     }
     void Update()
     {
-        if (moveSpot.Length == 0 && damagebleCharacter.Targetable && detectionZone.detectedObjs.Count == 0)
+        if (moveSpot.Length == 0 && Hp.Targetable && detectionZone.detectedObjs.Count == 0)
         {
             rb.velocity = Vector2.zero;
             animator.SetBool("IsMoving", false);
         }
-        if (damagebleCharacter.Targetable && detectionZone.detectedObjs.Count == 0 && moveSpot.Length != 0)
+        if (Hp.Targetable && detectionZone.detectedObjs.Count == 0 && moveSpot.Length != 0)
         {
             animator.SetBool("IsMoving", true); 
             transform.position = Vector2.MoveTowards(transform.position, moveSpot[randomSpot].position, 0.6f * Time.deltaTime);
@@ -79,7 +66,7 @@ public class Slime : MonoBehaviour
             }
         }
 
-        if (damagebleCharacter.Targetable && detectionZone.detectedObjs.Count > 0)
+        if (Hp.Targetable && detectionZone.detectedObjs.Count > 0)
         {
             animator.SetBool("IsMoving", true);
             Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
@@ -91,9 +78,18 @@ public class Slime : MonoBehaviour
             else if (direction.x > 0)
             {
                 spriteRenderer.flipX = false;
+            }  
+            if(Hp.Targetable && detectionZone.detectedObjs.Count > 0)
+            {
+                oldMovementInput = direction;
+                currentSpeed += acceleration * maxSpeed * Time.deltaTime;
             }
-
-            rb.AddForce(direction * moveSpeed * Time.deltaTime);
+            else
+            {
+                currentSpeed -= deacceleration * maxSpeed * Time.deltaTime;
+            }
+            currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
+            rb.velocity = oldMovementInput * currentSpeed;
         }
     }
     void OnCollisionStay2D(Collision2D col)
@@ -103,9 +99,7 @@ public class Slime : MonoBehaviour
 
         if (damageable != null)
         {
-            Vector2 dir = (collider.gameObject.transform.position - transform.position).normalized;
-            Vector2 knockback = dir * knocbackF;
-            damageable.OnHit(damage, knockback, tagEnemy);
+            damageable.OnHit(damage, gameObject);
         }
         else
         {
