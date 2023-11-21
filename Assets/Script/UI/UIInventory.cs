@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class UIInventory : MonoBehaviour
 {
-    [SerializeField] private InventoryItemInfo _appleInfo;
-    [SerializeField] private InventoryItemInfo _mucusInfo;
-    public InventoryWithSlots inventory => tester.inventory;
+    [SerializeField] private InventoryItemInfo slimeRingInfo;
+    public InventoryWithSlots inventory => playerInventory.inventory;
 
-    private UIInventoryTester tester;
+    private UIInventoryPlayer playerInventory;
     public void Start()
     {
         var uiSlots = GetComponentsInChildren<UIInventorySlot>();
-        tester = new UIInventoryTester(_appleInfo, _mucusInfo, uiSlots);
-        tester.FillSlots();
+        playerInventory = new UIInventoryPlayer(uiSlots, slimeRingInfo);
+        playerInventory.SetupInvetoryUI(inventory);
+        
     }
 }

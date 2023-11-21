@@ -5074,7 +5074,7 @@ MonoBehaviour:
   damage: 10
   tagTarget: Item
   moveSpeed: 23
-  inventory: {fileID: 8392149626453136973}
+  inventory: {fileID: 6732565129521148732}
   character: {fileID: 1673564235291209675}
   maxSpeed: 8
   swordHitbox: {fileID: 7937335611185967529}
@@ -5920,8 +5920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbfc6ca34b829e4c802fa0c4f927266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _appleInfo: {fileID: 11400000, guid: 8d3bd6105e019e748b82ce85de580bc4, type: 2}
-  _mucusInfo: {fileID: 11400000, guid: fafd513d9f40bee4886f4250ea73c0d3, type: 2}
+  slimeRingInfo: {fileID: 11400000, guid: 1902c8404f1d1794d9681624b91b44bd, type: 2}
 --- !u!1 &5353083739298617567
 GameObject:
   m_ObjectHideFlags: 0
