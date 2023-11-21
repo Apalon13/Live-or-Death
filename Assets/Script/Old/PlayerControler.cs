@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -18,7 +17,7 @@ public class PlayerControler : MonoBehaviour
 
     public float moveSpeed = 30f;
 
-    public GameObject inventory;
+    public UIInventory inventory;
 
     public DamagebleCharacter character;
 
@@ -47,7 +46,7 @@ public class PlayerControler : MonoBehaviour
     bool canMove = true;
     void Start()
     {
-        inventory.SetActive(false);
+        inventory.gameObject.SetActive(false);
         invOn = false;
         b.SetActive(false);
         active = false;
@@ -57,7 +56,6 @@ public class PlayerControler : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         swordCollider = swordHitbox.GetComponent<Collider2D>();
     }
-
     bool inventoryOn()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -71,11 +69,11 @@ public class PlayerControler : MonoBehaviour
         inventoryOn();
         if (invOn)
         {
-            inventory.SetActive(true);
+            inventory.gameObject.SetActive(true);
         }
         else
         {
-            inventory.SetActive(false);
+            inventory.gameObject.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -88,7 +86,7 @@ public class PlayerControler : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == tagTarget)
+        if (col.gameObject.tag == "Item")
         {
             b.SetActive(true);
             if (active)
